@@ -23,6 +23,10 @@ class Book:
         else:
             self.bookstore._add_book(self)
 
+    
+    def delete(self):
+        self.bookstore._delete_book(self)
+
 
     def __str__(self):
         read_status = 'have' if self.read else 'have not'
@@ -92,7 +96,7 @@ class BookStore:
                 con.close()
 
             
-        def delete_book(self, book):
+        def _delete_book(self, book):
             """ Removes book from store. Raises BookError if book not in store. 
             :param book the Book to delete """
 
